@@ -1,16 +1,16 @@
 package br.com.joao.model;
 
-
 import jakarta.persistence.*;
-
 
 import java.util.List;
 
 @Entity(name = "tb_user")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -19,10 +19,10 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     private Card card;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Featura> features;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<News> news;
 
     public Long getId() {
@@ -32,36 +32,45 @@ public class User {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
-    public Account getAccount(){
+
+    public Account getAccount() {
         return account;
     }
-    public void setAccount(Account account){
+
+    public void setAccount(Account account) {
         this.account = account;
     }
-    public Card getCard(){
+
+    public Card getCard() {
         return card;
     }
-    public void setCard(Card card){
+
+    public void setCard(Card card) {
         this.card = card;
     }
-    public List<Featura> getFeatures(){
+
+    public List<Featura> getFeatures() {
         return features;
     }
-    public void setFeatures(List<Featura> features){
+
+    public void setFeatures(List<Featura> features) {
         this.features = features;
     }
-    public List<News> getNews(){
+
+    public List<News> getNews() {
         return news;
     }
-    public void setNews(List<News> news){
+
+    public void setNews(List<News> news) {
         this.news = news;
     }
-
 
 }
